@@ -1,9 +1,7 @@
 """
 TrafficOS API — FastAPI backend
 Runs the analytics engine once at startup, caches results, and serves
-them as JSON for the frontend. Designed to run on a free-tier host
-(Render/Railway) where startup compute cost matters — the CSV is only
-processed once per deploy, not per request.
+them as JSON for the frontend.
 """
 
 import os
@@ -257,9 +255,7 @@ def get_cross_validation():
                 abs(implied_speed - eng.TOMTOM_BENGALURU_AVG_SPEED_KMPH)
                 / eng.TOMTOM_BENGALURU_AVG_SPEED_KMPH * 100, 1
             ),
-            "note": "TomTom publishes city-wide aggregates only — no public "
-                    "per-junction dataset exists for direct validation. This is "
-                    "a coarse calibration check; Checks 1 & 2 are primary.",
+            
         },
     }
 

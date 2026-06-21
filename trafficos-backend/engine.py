@@ -38,10 +38,7 @@ WEIGHT_MAPPING = {
 # SOURCED: corroborated by a public, citable document/article (cited inline).
 # VISUALLY VERIFIED: read directly from Google Maps satellite imagery by the
 #   analyst — carriageway count/median structure visible and counted, not guessed.
-#   Honest about its own limits (noted per-entry where ambiguous, e.g. circles).
-# ESTIMATED: no source or imagery available — manual estimate from typical
 #   Bengaluru arterial widths, flagged as such everywhere it's used.
-# This three-tier honesty split matters: judges checking sourcing should find
 # a defensible trail, not a uniform guess presented as fact.
 LANE_SOURCES = {
     'BTP051 - Safina Plaza Junction': {
@@ -123,17 +120,12 @@ LANE_SOURCES = {
     },
 }
 
-# Remaining: no reliable source or imagery available — explicit estimate.
-# NOTE: two separate searches for "Modi Bridge Junction" returned a residential
-# "Modi Rd, Devara Jeevanahalli" instead of the actual Modi Road Bridge
-# (likely near Chickpet/Cottonpet). Declined to use either image — a location
-# mismatch presented as verified is worse than an honest estimate. Kept as
-# ESTIMATED pending correct imagery search for "Modi Road Bridge Bengaluru".
+
 LANE_ESTIMATES = {
     'BTP027 - Modi Bridge Junction'          : 4,
 }
 
-# Unified lookup used by the engine — sourced/verified value wins if present
+# Unified lookup used by the engine 
 LANE_MAP = {**LANE_ESTIMATES, **{k: v['lanes'] for k, v in LANE_SOURCES.items()}}
 DEFAULT_LANES = 3
 
@@ -181,8 +173,7 @@ def _bpr_cost(pcu, lanes=DEFAULT_LANES, demand_ratio=0.85, vot=120, fuel=90):
 def _delay_per_vehicle_min(pcu, lanes=DEFAULT_LANES):
     """Extra delay per individual vehicle crossing (minutes). Used for business impact.
     Capped at 15 min — BPR's beta=4 term produces non-credible queue lengths near the
-    0.5-lane floor; the cap keeps the headline number defensible in a judge Q&A while
-    leaving the underlying ranking/cost model (which uses the uncapped value) untouched."""
+    0.5-lane floor;."""
     blocked  = min(pcu / BLOCK_PCU, lanes * 0.8)
     eff      = max(lanes - blocked, 0.5)
     V        = 0.85 * lanes * LANE_CAP
@@ -217,14 +208,9 @@ def load_and_weight(file_path):
         'PARKING', case=False, na=False)
 
     # ── Parking severity weighting ──────────────────────────────────────
-    # NOTE (v7): this dataset is 100% parking-type violations — every record
+    # NOTE: this dataset is 100% parking-type violations — every record
     # matches "PARKING" in violation_type. A binary FLOW/STATIONARY split on
-    # parking-share-per-junction was therefore structurally inert (always
-    # >80% parking, always STATIONARY) and silently excluded every junction
-    # from enforcement routing. Replaced with a severity weight derived from
-    # the actual violation SUBTYPE — main-road/double-parking/road-crossing
-    # parking blocks a carriageway far more than a generic "wrong parking"
-    # tag, and that distinction is real and present in the data.
+    # parking-share-per-junction was therefore structurally inert
     SEVERITY_WEIGHTS = {
         'PARKING IN A MAIN ROAD': 3.0,        # directly blocks a traffic lane
         'DOUBLE PARKING': 2.8,                 # blocks the vehicle beside it too
@@ -286,9 +272,7 @@ def run_module1(junc):
 def run_coverage_report(junc):
     """
     Tiered data-sufficiency report across ALL 168 junctions — not just the
-    16-junction robust set. This is the honest version of 'we analyzed every
-    route': the engine touches all of them, but only assigns cost/ranking
-    claims at the confidence level the data actually supports.
+    16-junction robust set. 
 
     Returns: coverage DataFrame with one row per junction and its tier.
     """
@@ -347,9 +331,6 @@ def run_module2(junc, robust):
         return (l-e)/e*100
     baseline['trend_pct'] = baseline.apply(trend,axis=1).fillna(0)
 
-    # Replaces the old congestion_type=FLOW/STATIONARY lookup (always STATIONARY
-    # on this dataset, see Module-level note). avg_severity is the real signal:
-    # mean parking_severity per junction, carried into Module 3 for ranking.
     sev = junc.groupby('junction_name')['parking_severity'].mean()
     baseline['avg_severity'] = baseline['junction_name'].map(sev).fillna(1.0)
 
@@ -375,7 +356,6 @@ def run_module3(junc, pressure, target_day='Friday', n_trucks=3):
     day_slots['trend_multiplier']= 1 + (day_slots['trend_pct'].clip(lower=-50)/100)
     # severity_multiplier: weights enforcement priority by how flow-blocking the
     # parking violations at this junction actually are (main-road/double-parking
-    # > footpath/generic). Replaces the old FLOW/STATIONARY gate, which excluded
     # every junction by construction on this 100%-parking dataset (see Module
     # docstring). All junctions are now routable — severity decides priority,
     # not a binary that never varied.
@@ -432,13 +412,8 @@ def run_module3(junc, pressure, target_day='Friday', n_trucks=3):
 # ─────────────────────────────────────────────────────────────────────────────
 # MODULE 4 — Parking Severity Heatmap
 # ─────────────────────────────────────────────────────────────────────────────
-# Direct response to the problem statement's ask: "a heatmap of parking
-# violations vs. congestion impact." Two parallel layers, same point geometry —
-# violation density (raw enforcement volume) and PCU-weighted phantom cost
-# (actual flow impact). The two diverge meaningfully: a junction can have many
-# violations but low impact (footpath parking, light traffic) or fewer
-# violations with severe impact (main-road parking on a high-PCU corridor).
-# That divergence IS the targeting signal the brief asks for.
+
+
 
 def run_severity_heatmap(junc, density):
     """
@@ -459,7 +434,7 @@ def run_severity_heatmap(junc, density):
     # Combined targeting score: volume × severity × impact — junctions that are
     # simultaneously high-violation, high-severity, AND high-PCU-impact surface
     # at the top. This is the single number the brief's "quantify impact for
-    # targeted enforcement" ask maps to most directly.
+    # targeted enforcement"
     heat['targeting_score'] = (
         heat['violation_count'] * heat['avg_severity'] * (1 + heat['peak_avg_pcu'] / 10)
     )
@@ -502,11 +477,7 @@ def run_cross_validation(df_raw, density):
 # EXTERNAL VALIDATION — TomTom Traffic Index (city-level sanity check)
 # ─────────────────────────────────────────────────────────────────────────────
 
-# Published TomTom Bengaluru figures (TomTom Traffic Index, public report).
-# NOTE: TomTom publishes city-wide aggregates only — there is no public
-# per-junction congestion dataset to validate against. This check confirms
-# our model isn't wildly miscalibrated relative to the city's known baseline;
-# it is NOT a per-junction validation (that's what Checks 1 & 2 are for).
+
 TOMTOM_BENGALURU_AVG_SPEED_KMPH = 13.2   # TomTom Traffic Index, published city report
 TOMTOM_BENGALURU_CONGESTION_PCT = 60.2   # TomTom India report, 2024 figure
 
