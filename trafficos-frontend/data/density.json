@@ -1,0 +1,117 @@
+{
+  "count": 16,
+  "data": [
+    {
+      "rank": 1,
+      "junction_name": "BTP058 - Subbanna Junction",
+      "peak_avg_pcu": 13.406315789473684,
+      "lanes": 2,
+      "lane_confidence": "VISUALLY VERIFIED"
+    },
+    {
+      "rank": 2,
+      "junction_name": "BTP051 - Safina Plaza Junction",
+      "peak_avg_pcu": 11.800357142857143,
+      "lanes": 2,
+      "lane_confidence": "SOURCED"
+    },
+    {
+      "rank": 3,
+      "junction_name": "BTP082 - KR Market Junction",
+      "peak_avg_pcu": 7.585714285714285,
+      "lanes": 4,
+      "lane_confidence": "VISUALLY VERIFIED"
+    },
+    {
+      "rank": 4,
+      "junction_name": "BTP044 - Sagar Theatre Junction",
+      "peak_avg_pcu": 7.011328125,
+      "lanes": 5,
+      "lane_confidence": "VISUALLY VERIFIED (LOW)"
+    },
+    {
+      "rank": 5,
+      "junction_name": "BTP040 - Elite Junction",
+      "peak_avg_pcu": 6.133760683760683,
+      "lanes": 6,
+      "lane_confidence": "VISUALLY VERIFIED"
+    },
+    {
+      "rank": 6,
+      "junction_name": "BTP057 - Anand Rao Junction",
+      "peak_avg_pcu": 5.331756756756757,
+      "lanes": 4,
+      "lane_confidence": "VISUALLY VERIFIED (LOW)"
+    },
+    {
+      "rank": 7,
+      "junction_name": "BTP001 - 10th Cross, Dr. Rajkumar Road",
+      "peak_avg_pcu": 4.511111111111111,
+      "lanes": 2,
+      "lane_confidence": "VISUALLY VERIFIED"
+    },
+    {
+      "rank": 8,
+      "junction_name": "BTP080 - NR Road, SP Road Junction",
+      "peak_avg_pcu": 4.258433734939759,
+      "lanes": 2,
+      "lane_confidence": "VISUALLY VERIFIED"
+    },
+    {
+      "rank": 9,
+      "junction_name": "BTP211 - Central Street Junction",
+      "peak_avg_pcu": 4.23203125,
+      "lanes": 2,
+      "lane_confidence": "VISUALLY VERIFIED"
+    },
+    {
+      "rank": 10,
+      "junction_name": "BTP027 - Modi Bridge Junction",
+      "peak_avg_pcu": 3.6450819672131147,
+      "lanes": 4,
+      "lane_confidence": "ESTIMATED"
+    },
+    {
+      "rank": 11,
+      "junction_name": "BTP038 - Mysore Bank Junction",
+      "peak_avg_pcu": 3.2069230769230765,
+      "lanes": 2,
+      "lane_confidence": "VISUALLY VERIFIED (LOW)"
+    },
+    {
+      "rank": 12,
+      "junction_name": "BTP045 - Danvanthri Road Junction",
+      "peak_avg_pcu": 3.1214285714285714,
+      "lanes": 3,
+      "lane_confidence": "VISUALLY VERIFIED (LOW)"
+    },
+    {
+      "rank": 13,
+      "junction_name": "BTP023 - Mahalaxmi Layout Entrance",
+      "peak_avg_pcu": 2.846794871794872,
+      "lanes": 2,
+      "lane_confidence": "VISUALLY VERIFIED (LOW)"
+    },
+    {
+      "rank": 14,
+      "junction_name": "BTP083 - AS Char Street, Mysore Road",
+      "peak_avg_pcu": 2.070967741935484,
+      "lanes": 2,
+      "lane_confidence": "VISUALLY VERIFIED"
+    },
+    {
+      "rank": 15,
+      "junction_name": "BTP043 - Upparpet Junction",
+      "peak_avg_pcu": 2.0346153846153845,
+      "lanes": 3,
+      "lane_confidence": "ESTIMATED"
+    },
+    {
+      "rank": 16,
+      "junction_name": "BTP108 - Tagore Park Junction",
+      "peak_avg_pcu": 1.3783333333333334,
+      "lanes": 4,
+      "lane_confidence": "VISUALLY VERIFIED"
+    }
+  ]
+}

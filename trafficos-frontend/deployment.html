@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TrafficOS · Deployment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar" id="topbar"></header>
+    <nav class="nav" id="nav"></nav>
+    <main class="main" id="main">
+      <div class="eyebrow">Resource-aware deployment</div>
+      <h1 class="page-title">BTP enforcement routing &middot; severity-ranked</h1>
+
+      <div class="controls" id="controls"></div>
+      <div class="stat-row" id="stat-row"></div>
+      <div class="trucks-grid" id="trucks-grid"></div>
+      <div id="uncovered-slot"></div>
+
+      <div style="font-size:11px;color:var(--steel);margin-top:18px;font-style:italic">
+        Static build: 4 pre-computed scenarios shown. Live deployment supports
+        arbitrary day/truck-count recomputation via the FastAPI backend.
+      </div>
+    </main>
+  </div>
+
+  <script src="js/shared.js"></script>
+  <script>
+    renderShell('deployment');
+
+    const SCENARIOS = [
+      { key: 'Friday_3', day: 'Friday', n: 3 },
+      { key: 'Monday_3', day: 'Monday', n: 3 },
+      { key: 'Friday_5', day: 'Friday', n: 5 },
+      { key: 'Saturday_2', day: 'Saturday', n: 2 },
+    ];
+
+    const TRUCK_COLOR = ['#FF6B35', '#4FBFA8', '#C9A86C', '#E84545', '#7A8AA6'];
+
+    let allScenarios = null;
+    let currentKey = 'Friday_3';
+
+    async function init() {
+      try {
+        allScenarios = await loadJSON('deployment_scenarios');
+        render();
+      } catch (e) {
+        showError(document.getElementById('main'), e.message, init);
+      }
+    }
+
+    function render() {
+      const data = allScenarios[currentKey];
+
+      document.getElementById('controls').innerHTML = `
+        <label class="control-label">
+          Scenario
+          <select id="scenario-select" class="control-select">
+            ${SCENARIOS.map(s => `
+              <option value="${s.key}" ${s.key === currentKey ? 'selected' : ''}>
+                ${s.day} &middot; ${s.n} truck${s.n > 1 ? 's' : ''}
+              </option>`).join('')}
+          </select>
+        </label>
+      `;
+      document.getElementById('scenario-select').addEventListener('change', (e) => {
+        currentKey = e.target.value;
+        render();
+      });
+
+      const totalStops = data.trucks.reduce((s, t) => s + t.route.length, 0);
+      document.getElementById('stat-row').innerHTML = [
+        statCard('Stops covered', totalStops, '', 'green'),
+        statCard('Uncovered windows', data.uncovered.length, '', data.uncovered.length ? 'red' : 'green'),
+        statCard('Trucks deployed', data.n_trucks),
+      ].join('');
+
+      document.getElementById('trucks-grid').innerHTML = data.trucks.map((truck, i) => `
+        <div class="truck-card">
+          <div class="truck-header">
+            <span class="truck-dot" style="background:${TRUCK_COLOR[i % 5]}"></span>
+            <span class="mono">Truck ${truck.id}</span>
+            <span class="truck-count">${truck.route.length} stops</span>
+          </div>
+          ${truck.route.length === 0
+            ? '<div class="empty-route">No feasible stops this configuration.</div>'
+            : `<div class="timeline">
+                ${truck.route.map((stop, si) => `
+                  <div class="stop">
+                    <div class="stop-time mono">${String(stop.hour).padStart(2, '0')}:00</div>
+                    <div class="stop-line">
+                      <span class="stop-dot" style="background:${TRUCK_COLOR[i % 5]}"></span>
+                      ${si < truck.route.length - 1 ? '<span class="stop-connector"></span>' : ''}
+                    </div>
+                    <div class="stop-body">
+                      <div class="stop-name">${esc(stop.junction.split(' - ').pop())}</div>
+                      <div class="stop-meta">
+                        <span>${stop.lanes}L</span><span>&middot;</span>
+                        <span>&#8377;${stop.priority.toLocaleString('en-IN')}/hr</span><span>&middot;</span>
+                        <span>${stop.dist_km}km</span><span>&middot;</span>
+                        <span title="parking severity">sev ${stop.avg_severity != null ? stop.avg_severity.toFixed(1) : '-'}</span>
+                        ${stop.trend_pct > 30 ? `<span class="rising-tag">&uarr; ${stop.trend_pct.toFixed(0)}%</span>` : ''}
+                      </div>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>`
+          }
+        </div>
+      `).join('');
+
+      const uncoveredSlot = document.getElementById('uncovered-slot');
+      if (data.uncovered.length > 0) {
+        uncoveredSlot.innerHTML = `
+          <div class="uncovered-panel">
+            <div class="eyebrow" style="color:var(--orange)">
+              Uncovered critical windows (${data.uncovered.length})
+            </div>
+            <table class="data-table" style="margin-top:12px">
+              <tbody>
+                ${data.uncovered.slice(0, 8).map(u => `
+                  <tr>
+                    <td>${String(u.hour).padStart(2, '0')}:00</td>
+                    <td>${esc((u.junction_name || '').split(' - ').pop())}</td>
+                    <td>&#8377;${Math.round(u.priority_score).toLocaleString('en-IN')}/hr</td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>
+          </div>`;
+      } else {
+        uncoveredSlot.innerHTML = '';
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{
+  "coverage": {
+    "total_junctions": 168,
+    "high": 16,
+    "medium": 37,
+    "low": 37,
+    "insufficient": 78
+  },
+  "fleet_delay_impact": [
+    {
+      "junction": "Subbanna Junction",
+      "delay_min": 15.0,
+      "lanes": 2,
+      "lane_confidence": "VISUALLY VERIFIED"
+    },
+    {
+      "junction": "Safina Plaza Junction",
+      "delay_min": 15.0,
+      "lanes": 2,
+      "lane_confidence": "SOURCED"
+    },
+    {
+      "junction": "KR Market Junction",
+      "delay_min": 1.4,
+      "lanes": 4,
+      "lane_confidence": "VISUALLY VERIFIED"
+    }
+  ],
+  "phantom_cost_6mo": {
+    "mid_scenario_rs": 427741353.0,
+    "mid_scenario_cr": 42.8,
+    "range_low_cr": 18.5,
+    "range_high_cr": 88.8,
+    "high_confidence_junctions": 16
+  }
+}

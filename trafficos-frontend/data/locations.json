@@ -1,0 +1,1685 @@
+{
+  "count": 168,
+  "data": [
+    {
+      "junction_name": "BTP001 - 10th Cross, Dr. Rajkumar Road",
+      "latitude": 13.007811443262298,
+      "longitude": 77.55465340067576,
+      "rank": 7.0,
+      "peak_avg_pcu": 4.511111111111111,
+      "lanes": 2.0,
+      "lane_confidence": "VISUALLY VERIFIED",
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP006 - Navarang Bar Junction",
+      "latitude": 12.990978136170211,
+      "longitude": 77.55759593617022,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP008 - Navarang Theatre",
+      "latitude": 12.998492417815125,
+      "longitude": 77.55309264941177,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP009 - Prakash Nagar Junction",
+      "latitude": 12.992517874427481,
+      "longitude": 77.55763266068702,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP010 - Rajajinagar Entrance",
+      "latitude": 12.982261563097772,
+      "longitude": 77.56008112329171,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP011 - RR Kalyana Mantapa, Dr. Rajkumar Road",
+      "latitude": 12.993694996696341,
+      "longitude": 77.55379199356938,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP015 - Suguna Hospital, Dr. Rajkumar Road",
+      "latitude": 12.98771043883495,
+      "longitude": 77.55949917572815,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP016 - 5th Main Road, RPC Layout",
+      "latitude": 12.965246043934675,
+      "longitude": 77.5378432820211,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP017 - Attiguppe Circle",
+      "latitude": 12.960583327014218,
+      "longitude": 77.52963757037915,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP018 - Dhobi Ghat Junction",
+      "latitude": 12.98761222696335,
+      "longitude": 77.54981949005236,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP020 - Hosahalli Metro Station",
+      "latitude": 12.97414419858571,
+      "longitude": 77.54529421309437,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP022 - Marenahalli Junction, Vijayanagar",
+      "latitude": 12.968779866920466,
+      "longitude": 77.53673460275871,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP023 - Mahalaxmi Layout Entrance",
+      "latitude": 13.008974449496067,
+      "longitude": 77.54920543394422,
+      "rank": 13.0,
+      "peak_avg_pcu": 2.846794871794872,
+      "lanes": 2.0,
+      "lane_confidence": "VISUALLY VERIFIED (LOW)",
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP024 - NPS, Vijayanagar",
+      "latitude": 12.98291347845193,
+      "longitude": 77.54882366500652,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP025 - Puttamma Choultry, Nagarbhavi",
+      "latitude": 12.978674192592594,
+      "longitude": 77.53819774074074,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP026 - 1st Block Junction, Rajajinagar",
+      "latitude": 13.002439084069982,
+      "longitude": 77.55009351215469,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP027 - Modi Bridge Junction",
+      "latitude": 12.998897494610551,
+      "longitude": 77.54941567682627,
+      "rank": 10.0,
+      "peak_avg_pcu": 3.6450819672131147,
+      "lanes": 4.0,
+      "lane_confidence": "ESTIMATED",
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP028 - Vijayanagar Bus Stand Junction",
+      "latitude": 12.972568562228885,
+      "longitude": 77.53806133053999,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP030 - Mekhri Circle",
+      "latitude": 13.013624291954024,
+      "longitude": 77.58397421839081,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP032 - Windsor Circle",
+      "latitude": 12.99308791268715,
+      "longitude": 77.58818366254266,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP033 - Sophia High School, Sankey Road",
+      "latitude": 12.990444546153846,
+      "longitude": 77.58866545673077,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP034 - LRDE Junction",
+      "latitude": 12.988339276825316,
+      "longitude": 77.5917559860704,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP035 - Basaweshwara Circle (LH) Junction",
+      "latitude": 12.984610472222222,
+      "longitude": 77.58816219444445,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP036 - Police Thimmaiah Circle (GPO)",
+      "latitude": 12.981054290361447,
+      "longitude": 77.59432185301205,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP037 - KR Circle",
+      "latitude": 12.976534570711298,
+      "longitude": 77.58653865523013,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP038 - Mysore Bank Junction",
+      "latitude": 12.973430411726868,
+      "longitude": 77.58124380880751,
+      "rank": 11.0,
+      "peak_avg_pcu": 3.2069230769230765,
+      "lanes": 2.0,
+      "lane_confidence": "VISUALLY VERIFIED (LOW)",
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP040 - Elite Junction",
+      "latitude": 12.976596713370032,
+      "longitude": 77.5766021547117,
+      "rank": 5.0,
+      "peak_avg_pcu": 6.133760683760683,
+      "lanes": 6.0,
+      "lane_confidence": "VISUALLY VERIFIED",
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP041 - Gopal Gowda Circle",
+      "latitude": 12.977295857671956,
+      "longitude": 77.59026518835978,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP042 - Minsk Square Junction (CTO)",
+      "latitude": 12.981175736986302,
+      "longitude": 77.59845689202544,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP043 - Upparpet Junction",
+      "latitude": 12.971139927984629,
+      "longitude": 77.57557195804274,
+      "rank": 15.0,
+      "peak_avg_pcu": 2.0346153846153845,
+      "lanes": 3.0,
+      "lane_confidence": "ESTIMATED",
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP044 - Sagar Theatre Junction",
+      "latitude": 12.974938996857006,
+      "longitude": 77.57889570478889,
+      "rank": 4.0,
+      "peak_avg_pcu": 7.011328125,
+      "lanes": 5.0,
+      "lane_confidence": "VISUALLY VERIFIED (LOW)",
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP045 - Danvanthri Road Junction",
+      "latitude": 12.977065128575921,
+      "longitude": 77.57478964140208,
+      "rank": 12.0,
+      "peak_avg_pcu": 3.1214285714285714,
+      "lanes": 3.0,
+      "lane_confidence": "VISUALLY VERIFIED (LOW)",
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP047 - Vidhan Soudha Metro Station",
+      "latitude": 12.979835985,
+      "longitude": 77.59251278949999,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP048 - Shanthala Junction",
+      "latitude": 12.976960576691845,
+      "longitude": 77.57075523407478,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP051 - Safina Plaza Junction",
+      "latitude": 12.981212065557246,
+      "longitude": 77.60869513989651,
+      "rank": 2.0,
+      "peak_avg_pcu": 11.800357142857143,
+      "lanes": 2.0,
+      "lane_confidence": "SOURCED",
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP052 - CID Carlton House Junction",
+      "latitude": 12.980863155860892,
+      "longitude": 77.58762164743166,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP053 - Three Let Junction",
+      "latitude": 12.983894015686275,
+      "longitude": 77.58177205098039,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP054 - Shivananda Circle",
+      "latitude": 12.986267004491276,
+      "longitude": 77.57886273319414,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP057 - Anand Rao Junction",
+      "latitude": 12.979395373087675,
+      "longitude": 77.57438830726811,
+      "rank": 6.0,
+      "peak_avg_pcu": 5.331756756756757,
+      "lanes": 4.0,
+      "lane_confidence": "VISUALLY VERIFIED (LOW)",
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP058 - Subbanna Junction",
+      "latitude": 12.979021616597574,
+      "longitude": 77.57866101486218,
+      "rank": 1.0,
+      "peak_avg_pcu": 13.406315789473684,
+      "lanes": 2.0,
+      "lane_confidence": "VISUALLY VERIFIED",
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP061 - Bhashyam Circle",
+      "latitude": 12.985184338307276,
+      "longitude": 77.55392274871211,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP062 - Basava Mantapa, Dr. Rajkumar Road",
+      "latitude": 12.979911838377566,
+      "longitude": 77.5546504141,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP063 - Siddalingaiah Circle",
+      "latitude": 12.971526511981132,
+      "longitude": 77.5967034683019,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP064 - Devanga Hostel Junction",
+      "latitude": 12.962732790384617,
+      "longitude": 77.58990461057692,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP067 - Jai Muni Rao Circle",
+      "latitude": 12.978517780813087,
+      "longitude": 77.54273679499191,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP068 - Veeresh Theatre Junction",
+      "latitude": 12.977227481944444,
+      "longitude": 77.54562137718254,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP069 - MC Circle",
+      "latitude": 12.974620575358045,
+      "longitude": 77.54751794417268,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP070 - Cholurpalya Junction, Magadi Road",
+      "latitude": 12.973484256997908,
+      "longitude": 77.550805919489,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP071 - Prasanna Junction",
+      "latitude": 12.974369503954971,
+      "longitude": 77.55203424621543,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP074 - Leprosy Hospital Junction",
+      "latitude": 12.975846885138832,
+      "longitude": 77.56179568138215,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP075 - Police Corner",
+      "latitude": 12.968845718276503,
+      "longitude": 77.58628269328581,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP076 - Hudson Circle",
+      "latitude": 12.968029834285714,
+      "longitude": 77.58880913494505,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP077 - Halasuru Gate Junction",
+      "latitude": 12.966806766666668,
+      "longitude": 77.58703611,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP078 - NR Square Junction",
+      "latitude": 12.965873413934425,
+      "longitude": 77.5854067954918,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP079 - Town Hall Junction",
+      "latitude": 12.964742432716049,
+      "longitude": 77.58478980123456,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP080 - NR Road, SP Road Junction",
+      "latitude": 12.96439657572473,
+      "longitude": 77.58316820553203,
+      "rank": 8.0,
+      "peak_avg_pcu": 4.258433734939759,
+      "lanes": 2.0,
+      "lane_confidence": "VISUALLY VERIFIED",
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP082 - KR Market Junction",
+      "latitude": 12.964423750642322,
+      "longitude": 77.57724121294086,
+      "rank": 3.0,
+      "peak_avg_pcu": 7.585714285714285,
+      "lanes": 4.0,
+      "lane_confidence": "VISUALLY VERIFIED",
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP083 - AS Char Street, Mysore Road",
+      "latitude": 12.966450044406306,
+      "longitude": 77.57440287238298,
+      "rank": 14.0,
+      "peak_avg_pcu": 2.070967741935484,
+      "lanes": 2.0,
+      "lane_confidence": "VISUALLY VERIFIED",
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP085 - Briyand Circle",
+      "latitude": 12.966068878313253,
+      "longitude": 77.56948985903615,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP089 - Police Quarters, Sultan Road",
+      "latitude": 12.960983110344829,
+      "longitude": 77.56353294367817,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP091 - Sirsi Circle",
+      "latitude": 12.962208439163499,
+      "longitude": 77.55862826692015,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP092 - Bangalore Builders Junction",
+      "latitude": 12.959323617708334,
+      "longitude": 77.555697278125,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP093 - Toll Gate, Mysore Road",
+      "latitude": 12.958754304444446,
+      "longitude": 77.55213842444445,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP094 - Sri Skanda Complex, Mysore Road",
+      "latitude": 12.955815682142857,
+      "longitude": 77.54617815178571,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP095 - Satellite Bus Stand, Mysore Road",
+      "latitude": 12.953825250666533,
+      "longitude": 77.54339804607628,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP096 - Gali Anjaneya Temple",
+      "latitude": 12.952594812896978,
+      "longitude": 77.54121609195656,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP098 - Nayandahalli Junction",
+      "latitude": 12.944823567475726,
+      "longitude": 77.52768460776699,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP099 - Cash Pharmacy, Residency Road",
+      "latitude": 12.969120946131804,
+      "longitude": 77.60030236275072,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP100 - Richmond Circle",
+      "latitude": 12.962800310526315,
+      "longitude": 77.59827016480263,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP101 - Blood Bank Circle, KH Road",
+      "latitude": 12.961947537560976,
+      "longitude": 77.59617864317073,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP102 - BMTC Junction, KH Road",
+      "latitude": 12.955459190857143,
+      "longitude": 77.59290232228571,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP103 - Shanti Nagar TTMC",
+      "latitude": 12.9538741625,
+      "longitude": 77.59162276111111,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP104 - Medical College Circle",
+      "latitude": 12.959562748076925,
+      "longitude": 77.57661357181698,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP105 - Shivasankara Circle",
+      "latitude": 12.956902590860215,
+      "longitude": 77.57416609784947,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP106 - VV Puram College",
+      "latitude": 12.952855020536774,
+      "longitude": 77.57449485352718,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP107 - National College Junction",
+      "latitude": 12.948955050684932,
+      "longitude": 77.57294951506849,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP108 - Tagore Park Junction",
+      "latitude": 12.943901209259396,
+      "longitude": 77.57143116315804,
+      "rank": 16.0,
+      "peak_avg_pcu": 1.3783333333333334,
+      "lanes": 4.0,
+      "lane_confidence": "VISUALLY VERIFIED",
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP109 - Dewan Madhava Rao Junction",
+      "latitude": 12.940864320388348,
+      "longitude": 77.57243474530745,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP110 - Bharathi Nursing Home, Basavanagudi",
+      "latitude": 12.93742960532226,
+      "longitude": 77.57230527575187,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP112 - 14th Cross, KR Road",
+      "latitude": 12.92934653,
+      "longitude": 77.57320882,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP113 - 27th Cross, Pai Vista, KR Road",
+      "latitude": 12.9175333703125,
+      "longitude": 77.5731112515625,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP114 - KR Road Junction, Near JSS",
+      "latitude": 12.924224496361514,
+      "longitude": 77.57491752140425,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP115 - Sahasra Hospital, Jayanagar",
+      "latitude": 12.91728404702033,
+      "longitude": 77.5738125694776,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP117 - 9th Cross, Kanakapura Road",
+      "latitude": 12.91214845732899,
+      "longitude": 77.57334888045604,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP118 - Basappa Circle",
+      "latitude": 12.958166349617152,
+      "longitude": 77.57756666983154,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP119 - Minerva Circle",
+      "latitude": 12.955163112562813,
+      "longitude": 77.58039649145728,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP120 - Lalbagh Main Gate Junction",
+      "latitude": 12.954084420901639,
+      "longitude": 77.58441278032787,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP121 - KH Circle",
+      "latitude": 12.951853676635514,
+      "longitude": 77.5903747271028,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP122 - Siddapura Junction",
+      "latitude": 12.948400291780821,
+      "longitude": 77.59279610068494,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP123 - 10th Cross, Wilson Garden",
+      "latitude": 12.94600243397952,
+      "longitude": 77.59607296917757,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP126 - Dairy Circle",
+      "latitude": 12.936743940419163,
+      "longitude": 77.60242927844311,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP127 - Sagar Hospital, Jayanagar",
+      "latitude": 12.927947021686748,
+      "longitude": 77.59825148915664,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP128 - Gorappanapalya Junction",
+      "latitude": 12.920460569090908,
+      "longitude": 77.60040643272727,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP130 - GD Mara Junction",
+      "latitude": 12.908069876703646,
+      "longitude": 77.60081684453249,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP132 - Anepalya Junction",
+      "latitude": 12.951251251265823,
+      "longitude": 77.60690484050633,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP133 - Adugodi Junction",
+      "latitude": 12.941853575342465,
+      "longitude": 77.6086067250685,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP134 - Mico Bande",
+      "latitude": 12.945696853061223,
+      "longitude": 77.6025479367347,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP135 - UCO Bank Junction",
+      "latitude": 12.935621750629496,
+      "longitude": 77.61497794019785,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP136 - Hosur-Tavarkere Road Junction",
+      "latitude": 12.93432707138889,
+      "longitude": 77.60844668972223,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP137 - Madiwala Traffic PS Junction",
+      "latitude": 12.92332618796038,
+      "longitude": 77.6198709011831,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP138 - Sarjapur Road Check Post",
+      "latitude": 12.927103010322917,
+      "longitude": 77.61688994134308,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP140 - Madiwala Check Post",
+      "latitude": 12.932305598913045,
+      "longitude": 77.6132812736413,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP141 - Palmgroove Junction",
+      "latitude": 12.968292564,
+      "longitude": 77.613494202,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP142 - Lower Agram Road Junction",
+      "latitude": 12.961824142424243,
+      "longitude": 77.61549586666666,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP143 - ASC Junction",
+      "latitude": 12.9694987,
+      "longitude": 77.6197457625,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP144 - Commando Hospital Junction",
+      "latitude": 12.969203566666666,
+      "longitude": 77.62634385,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP145 - Sri Hatti Maramma Circle, Domluru",
+      "latitude": 12.961282601803124,
+      "longitude": 77.63615441362482,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP146 - Domlur Water Tank",
+      "latitude": 12.960488461643836,
+      "longitude": 77.63886880273972,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP148 - 17th Main, Doopanahalli Bus Stop",
+      "latitude": 12.963663511161307,
+      "longitude": 77.64223399413451,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP154 - Itmadu Junction",
+      "latitude": 12.929791199999999,
+      "longitude": 77.54656500833333,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP155 - Katriguppe Junction",
+      "latitude": 12.9266994100295,
+      "longitude": 77.55074285663717,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP156 - Kamakya Junction",
+      "latitude": 12.923719841795629,
+      "longitude": 77.55360571975804,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP157 - Kadirenahalli Cross",
+      "latitude": 12.913022025,
+      "longitude": 77.5670021,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP158 - Devegowda Petrol Bunk",
+      "latitude": 12.921245118184277,
+      "longitude": 77.56029589125625,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP159 - JP Nagar Metro, ORR",
+      "latitude": 12.906413123500311,
+      "longitude": 77.57288417491768,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP161 - 15th Cross, 35th Main, JP Nagar",
+      "latitude": 12.906264035557681,
+      "longitude": 77.57765224581213,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP163 - 16th Main Road, BTM Layout",
+      "latitude": 12.91499527445055,
+      "longitude": 77.60852014148351,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP164 - 29th Main Road, BTM Layout",
+      "latitude": 12.916027286041107,
+      "longitude": 77.61535643491827,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP166 - Coffee Board Junction",
+      "latitude": 12.984920821487604,
+      "longitude": 77.5943366785124,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP167 - JC Road Junction",
+      "latitude": 12.9582712466602,
+      "longitude": 77.58126169958715,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP168 - MSR Building, JC Road",
+      "latitude": 12.961180810606061,
+      "longitude": 77.58428897045455,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP170 - Dr. Bheem Rao Palace, Chord Road",
+      "latitude": 12.99037199306623,
+      "longitude": 77.551225814101,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP171 - Indian Express (Balekundri)",
+      "latitude": 12.986301935964912,
+      "longitude": 77.59864174824561,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP172 - Nanjappa Circle",
+      "latitude": 12.961702129381443,
+      "longitude": 77.59948909484535,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP173 - TMC",
+      "latitude": 12.98232968486842,
+      "longitude": 77.59871615789473,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP176 - Rajalakshmi Kalyana Mantapa, JP Nagar",
+      "latitude": 12.917309109693877,
+      "longitude": 77.57831904234695,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP177 - Aurobindo Circle, ORR",
+      "latitude": 12.916612181720431,
+      "longitude": 77.58524550268818,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP178 - 18th Main, Marenahalli",
+      "latitude": 12.91689827142857,
+      "longitude": 77.58956701428572,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP179 - 9th Block, 28th Main, Jayanagar",
+      "latitude": 12.91695609,
+      "longitude": 77.59508601818183,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP180 - Swagath Poornima Theatre",
+      "latitude": 12.96046395210728,
+      "longitude": 77.58731793409962,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP181 - Bileka Halli Junction",
+      "latitude": 12.9019944125,
+      "longitude": 77.60112085,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP182 - 19th Main Junction, Rajajinagar",
+      "latitude": 12.99900715064247,
+      "longitude": 77.5508516759733,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP184 - Lalbagh West Gate",
+      "latitude": 12.94843504744186,
+      "longitude": 77.58018114418606,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP185 - RV Teachers College",
+      "latitude": 12.94458577368421,
+      "longitude": 77.58073809122807,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP186 - 9th Cross, 4th Main, Jayanagar",
+      "latitude": 12.939329417176364,
+      "longitude": 77.58299607614546,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP187 - South End Circle",
+      "latitude": 12.937437009438865,
+      "longitude": 77.58186328855274,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP188 - 27th Cross, 4th Main, Jayanagar",
+      "latitude": 12.929681475170067,
+      "longitude": 77.5805690537415,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP189 - New Diagonal Road, Jayanagar",
+      "latitude": 12.928112280564784,
+      "longitude": 77.58069761295681,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP190 - 36th Cross, 4th Main, Jayanagar",
+      "latitude": 12.922585208123428,
+      "longitude": 77.5812768107059,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP191 - 40th Cross, 4th Main, Jayanagar",
+      "latitude": 12.920106225714285,
+      "longitude": 77.58220127047619,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP192 - Urvashi Theater",
+      "latitude": 12.95650754928,
+      "longitude": 77.58603276544001,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP193 - Vasavi Circle",
+      "latitude": 12.949798086218998,
+      "longitude": 77.5767949444681,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP196 - Sarakki Main Road",
+      "latitude": 12.910996460923245,
+      "longitude": 77.57833824855072,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP197 - 9th Cross, 24th Main, JP Nagar",
+      "latitude": 12.911549545221384,
+      "longitude": 77.58599000264428,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP198 - 9th Cross, 8th Main, JP Nagar",
+      "latitude": 12.910339621428571,
+      "longitude": 77.59572164285714,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP200 - 15th Cross, 33rd Main, JP Nagar",
+      "latitude": 12.9063283,
+      "longitude": 77.58138778214285,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP202 - East End Main Road, Jayanagar",
+      "latitude": 12.917186653521128,
+      "longitude": 77.59701229788732,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP203 - RRMR Junction",
+      "latitude": 12.96743880076923,
+      "longitude": 77.59360017,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP204 - ESI Hospital, Rajajinagar",
+      "latitude": 12.990358886677116,
+      "longitude": 77.55373500799372,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP205 - Modi Hospital Junction",
+      "latitude": 12.997488303320912,
+      "longitude": 77.54695407575124,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP206 - Shankara Mutt Circle, Vijayanagar",
+      "latitude": 12.998620176634214,
+      "longitude": 77.54142142920723,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP207 - 8th Main Road Basaveshwara Nagar",
+      "latitude": 12.991897484976526,
+      "longitude": 77.53847353051643,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP208 - Havanur Circle",
+      "latitude": 12.987954160845806,
+      "longitude": 77.53755577344506,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP210 - 50th cross, 12th Main , Rajajinagar",
+      "latitude": 12.986979151428573,
+      "longitude": 77.55512463802198,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP211 - Central Street Junction",
+      "latitude": 12.983371022821446,
+      "longitude": 77.60345435130863,
+      "rank": 9.0,
+      "peak_avg_pcu": 4.23203125,
+      "lanes": 2.0,
+      "lane_confidence": "VISUALLY VERIFIED",
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP212 - Minto Junction",
+      "latitude": 12.96031432051282,
+      "longitude": 77.5714075602564,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP213 - Royan Circle",
+      "latitude": 12.960664534079864,
+      "longitude": 77.56822902305134,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP214 - 5th Main Chamrajpet  Junction",
+      "latitude": 12.96500902960007,
+      "longitude": 77.55255323659712,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP215 - Vanivillas Junction",
+      "latitude": 12.946120153483719,
+      "longitude": 77.57023379090926,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP216 - Yediyur Junction",
+      "latitude": 12.93804460616813,
+      "longitude": 77.57688296083747,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP217 - Baleyele Junction",
+      "latitude": 12.957381283693532,
+      "longitude": 77.56944775460542,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP218 - Syndicate Bank Junction",
+      "latitude": 12.934673374928776,
+      "longitude": 77.58443592279203,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP219 - Canara Bank Junction",
+      "latitude": 12.931167219553071,
+      "longitude": 77.58453701256984,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP220 - Puttanna Junction",
+      "latitude": 12.928844605442176,
+      "longitude": 77.58282851292518,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP221 - 15th Cross, 24th Main, JP Nagar",
+      "latitude": 12.905022600862068,
+      "longitude": 77.58618874568965,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP222 - Delmia Circle",
+      "latitude": 12.905932804081633,
+      "longitude": 77.59263616836735,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP225 - Geetha Junction",
+      "latitude": 12.928338116027875,
+      "longitude": 77.58587362578398,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP226 - 33rd Cross, 11th Main, Jayanagar",
+      "latitude": 12.925926613617886,
+      "longitude": 77.58563274735774,
+      "rank": null,
+      "peak_avg_pcu": null,
+      "lanes": null,
+      "lane_confidence": null,
+      "tier": "MEDIUM"
+    }
+  ]
+}

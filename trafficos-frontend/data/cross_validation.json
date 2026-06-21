@@ -1,0 +1,49 @@
+{
+  "check1_obstruction_overlap": {
+    "overlap_count": 5,
+    "total": 5,
+    "matched_junctions": [
+      "Subbanna Junction",
+      "Safina Plaza Junction",
+      "KR Market Junction",
+      "Sagar Theatre Junction",
+      "Elite Junction"
+    ]
+  },
+  "check2_heavy_vehicle_baseline": {
+    "city_baseline_pct": 1.36,
+    "junctions": [
+      {
+        "junction": "BTP058 - Subbanna Junction",
+        "heavy_pct": 1.21,
+        "above_baseline": false
+      },
+      {
+        "junction": "BTP051 - Safina Plaza Junction",
+        "heavy_pct": 0.21,
+        "above_baseline": false
+      },
+      {
+        "junction": "BTP082 - KR Market Junction",
+        "heavy_pct": 0.39,
+        "above_baseline": false
+      },
+      {
+        "junction": "BTP044 - Sagar Theatre Junction",
+        "heavy_pct": 1.43,
+        "above_baseline": true
+      },
+      {
+        "junction": "BTP040 - Elite Junction",
+        "heavy_pct": 0.53,
+        "above_baseline": false
+      }
+    ]
+  },
+  "check3_tomtom_sanity_check": {
+    "tomtom_published_speed_kmph": 13.2,
+    "model_implied_speed_kmph": 12.7,
+    "deviation_pct": 3.8,
+    "note": "TomTom publishes city-wide aggregates only \u2014 no public per-junction dataset exists for direct validation. This is a coarse calibration check; Checks 1 & 2 are primary."
+  }
+}

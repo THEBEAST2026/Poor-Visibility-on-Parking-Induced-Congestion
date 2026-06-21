@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TrafficOS · Coverage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .pie {
+      width: 220px; height: 220px; border-radius: 50%; margin: 0 auto;
+      position: relative;
+    }
+    .pie-hole {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 120px; height: 120px; border-radius: 50%; background: var(--ink-raised);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+    }
+    .pie-hole-val { font-family: var(--font-mono); font-size: 26px; font-weight: 700; }
+    .pie-hole-label { font-size: 9.5px; color: var(--paper-dim); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 2px; }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar" id="topbar"></header>
+    <nav class="nav" id="nav"></nav>
+    <main class="main" id="main">
+      <div class="eyebrow">System-wide honesty audit</div>
+      <h1 class="page-title" style="max-width:640px">Why we don't claim more than the data supports</h1>
+      <p style="font-size:13.5px;color:var(--paper-dim);line-height:1.7;max-width:640px;margin-bottom:28px" id="intro"></p>
+
+      <div class="coverage-split">
+        <div class="chart-panel">
+          <div class="pie" id="pie"></div>
+        </div>
+        <div class="tier-list" id="tier-list"></div>
+      </div>
+
+      <div class="recommendation" id="recommendation"></div>
+    </main>
+  </div>
+
+  <script src="js/shared.js"></script>
+  <script>
+    renderShell('coverage');
+
+    const TIER_COLOR = { HIGH: '#FF6B35', MEDIUM: '#C9A86C', LOW: '#4FBFA8', INSUFFICIENT: '#3D4451' };
+    const TIER_DESC = {
+      HIGH: 'Full BPR cost model + sensitivity grid. &ge;60 days of data.',
+      MEDIUM: 'Density ranking only, no cost claims. &ge;30 days of data.',
+      LOW: 'Directional signal only. &ge;15 days of data.',
+      INSUFFICIENT: 'Sensor/data gap &mdash; flagged as an operational finding, not hidden.',
+    };
+    const TIER_ORDER = ['HIGH', 'MEDIUM', 'LOW', 'INSUFFICIENT'];
+
+    async function init() {
+      try {
+        const coverage = await loadJSON('coverage');
+        render(coverage);
+      } catch (e) {
+        showError(document.getElementById('main'), e.message, init);
+      }
+    }
+
+    function render(coverage) {
+      document.getElementById('intro').innerHTML =
+        'The engine scans all <b class="mono">' + coverage.total_junctions + '</b> junctions ' +
+        'city-wide. Each is assigned a confidence tier based on how many days of ' +
+        'violation data exist for it &mdash; not all junctions get the same evidentiary ' +
+        'weight, and the system says so explicitly rather than presenting a uniform claim.';
+
+      renderPie(coverage);
+
+      document.getElementById('tier-list').innerHTML = TIER_ORDER.map(function(tier) {
+        const count = coverage.tier_counts[tier] || 0;
+        const pct = ((count / coverage.total_junctions) * 100).toFixed(0);
+        return '<div class="tier-row">' +
+          '<div class="tier-dot" style="background:' + TIER_COLOR[tier] + '"></div>' +
+          '<div style="flex:1">' +
+          '<div class="tier-name">' + confBadge(tier) + '<span class="tier-pct">' + pct + '%</span></div>' +
+          '<div class="tier-desc">' + TIER_DESC[tier] + '</div>' +
+          '</div>' +
+          '<div class="tier-count mono">' + count + '</div>' +
+          '</div>';
+      }).join('');
+
+      document.getElementById('recommendation').innerHTML =
+        '<div class="eyebrow" style="color:var(--orange)">Operational recommendation</div>' +
+        '<p style="font-size:13px;color:var(--paper-dim);line-height:1.7;margin-top:8px">' +
+        'The <b>' + coverage.tier_counts.INSUFFICIENT + '</b> INSUFFICIENT-tier junctions ' +
+        'represent a real sensor-coverage gap, not a model limitation &mdash; BTP camera ' +
+        'uptime at these locations should be audited before they can enter the ' +
+        'HIGH-confidence ranking pipeline.</p>';
+    }
+
+    function renderPie(coverage) {
+      let cumulative = 0;
+      const segments = TIER_ORDER.map(function(tier) {
+        const count = coverage.tier_counts[tier] || 0;
+        const pct = (count / coverage.total_junctions) * 100;
+        const seg = TIER_COLOR[tier] + ' ' + cumulative + '% ' + (cumulative + pct) + '%';
+        cumulative += pct;
+        return seg;
+      });
+      document.getElementById('pie').style.background = 'conic-gradient(' + segments.join(', ') + ')';
+      document.getElementById('pie').innerHTML =
+        '<div class="pie-hole">' +
+        '<div class="pie-hole-val">' + coverage.tier_counts.HIGH + '</div>' +
+        '<div class="pie-hole-label">high conf.</div>' +
+        '</div>';
+    }
+
+    init();
+  </script>
+</body>
+</html>

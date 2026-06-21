@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TrafficOS · Hotspots</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .hs-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; align-items: start; }
+    @media (max-width: 900px) { .hs-grid { grid-template-columns: 1fr; } }
+    .bar-row { display: grid; grid-template-columns: 160px 1fr 50px; align-items: center; gap: 10px; margin-bottom: 7px; cursor: pointer; }
+    .bar-label { font-family: var(--font-mono); font-size: 11px; color: var(--paper-dim); text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .bar-track { background: var(--ink); border-radius: 2px; height: 18px; position: relative; }
+    .bar-fill { height: 100%; border-radius: 2px; background: var(--steel); transition: background 0.15s; }
+    .bar-row.selected .bar-fill { background: var(--orange); }
+    .bar-row:hover .bar-fill { background: var(--paper-dim); }
+    .bar-row.selected:hover .bar-fill { background: var(--orange); }
+    .bar-val { font-family: var(--font-mono); font-size: 11px; color: var(--paper-dim); }
+    .detail-header { display: flex; gap: 16px; align-items: center; margin-bottom: 14px; font-family: var(--font-mono); font-size: 13px; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar" id="topbar"></header>
+    <nav class="nav" id="nav"></nav>
+    <main class="main" id="main">
+      <div class="eyebrow">High-confidence ranking</div>
+      <h1 class="page-title">Top 16 junctions · &ge;60 days of data</h1>
+      <div class="stat-row" id="stat-row"></div>
+      <div class="hs-grid">
+        <div class="panel">
+          <div class="eyebrow panel-title">Peak PCU by junction (click to inspect)</div>
+          <div id="bar-chart"></div>
+        </div>
+        <div class="panel">
+          <div class="eyebrow panel-title">Sensitivity grid &middot; 6-mo phantom cost (Rs Cr)</div>
+          <div id="sens-table"></div>
+          <div style="font-size:11px;color:var(--steel);margin-top:10px">
+            VOT = value of time (Rs 80/120/160 per hour) &middot; highlighted = base case
+          </div>
+        </div>
+      </div>
+      <div class="panel" id="detail-panel"></div>
+    </main>
+  </div>
+
+  <script src="js/shared.js"></script>
+  <script>
+    renderShell('hotspots');
+
+    let density = [], sensitivity = [], impact = null, selected = null;
+
+    async function init() {
+      try {
+        const [d, s, i] = await Promise.all([
+          loadJSON('density'), loadJSON('sensitivity'), loadJSON('business_impact'),
+        ]);
+        density = d.data.slice(0, 16);
+        sensitivity = s.data;
+        impact = i;
+        selected = density[0] ? density[0].junction_name : null;
+        render();
+      } catch (e) {
+        showError(document.getElementById('main'), e.message, init);
+      }
+    }
+
+    function render() {
+      document.getElementById('stat-row').innerHTML = [
+        statCard('Phantom cost (6mo, mid)', 'Rs ' + impact.phantom_cost_6mo.mid_scenario_cr + ' Cr',
+          'range Rs ' + impact.phantom_cost_6mo.range_low_cr + '-' + impact.phantom_cost_6mo.range_high_cr + ' Cr', 'orange'),
+        statCard('Worst delay', '+' + (impact.fleet_delay_impact[0] ? impact.fleet_delay_impact[0].delay_min : '-') + ' min',
+          impact.fleet_delay_impact[0] ? impact.fleet_delay_impact[0].junction : '', 'red'),
+        statCard('High-confidence junctions', impact.coverage.high,
+          'of ' + impact.coverage.total_junctions + ' city-wide'),
+      ].join('');
+
+      renderBarChart();
+      renderSensTable();
+      renderDetail();
+    }
+
+    function renderBarChart() {
+      const maxPcu = Math.max.apply(null, density.map(function(d) { return d.peak_avg_pcu; }));
+      document.getElementById('bar-chart').innerHTML = density.map(function(d) {
+        const pct = (d.peak_avg_pcu / maxPcu) * 100;
+        const isSel = d.junction_name === selected;
+        const shortName = d.junction_name.split(' - ').pop();
+        return '<div class="bar-row ' + (isSel ? 'selected' : '') + '" data-junction="' + esc(d.junction_name) + '">' +
+          '<div class="bar-label" title="' + esc(shortName) + '">' + esc(shortName) + '</div>' +
+          '<div class="bar-track"><div class="bar-fill" style="width:' + pct + '%"></div></div>' +
+          '<div class="bar-val">' + d.peak_avg_pcu.toFixed(1) + '</div></div>';
+      }).join('');
+
+      document.querySelectorAll('.bar-row').forEach(function(row) {
+        row.addEventListener('click', function() {
+          selected = row.dataset.junction;
+          render();
+        });
+      });
+    }
+
+    function renderSensTable() {
+      const byVot = {};
+      sensitivity.forEach(function(row) {
+        byVot[row.vot] = byVot[row.vot] || {};
+        byVot[row.vot][row.demand] = +(row.total_6mo_rs / 1e7).toFixed(1);
+      });
+      const vots = ['low', 'mid', 'high'];
+      let rows = '';
+      vots.forEach(function(vot) {
+        let cells = '';
+        vots.forEach(function(dem) {
+          const isMid = vot === 'mid' && dem === 'mid';
+          const val = (byVot[vot] && byVot[vot][dem] != null) ? byVot[vot][dem] : '-';
+          cells += '<td class="' + (isMid ? 'td-highlight' : '') + '">Rs ' + val + '</td>';
+        });
+        rows += '<tr><td style="text-transform:capitalize">' + vot + '</td>' + cells + '</tr>';
+      });
+      document.getElementById('sens-table').innerHTML =
+        '<table class="data-table"><thead><tr><th>VOT \\ Demand</th><th>Low</th><th>Mid</th><th>High</th></tr></thead><tbody>' +
+        rows + '</tbody></table>';
+    }
+
+    function renderDetail() {
+      const d = density.find(function(x) { return x.junction_name === selected; });
+      if (!d) return;
+      const shortName = selected.split(' - ').pop();
+      document.getElementById('detail-panel').innerHTML =
+        '<div class="eyebrow panel-title">Detail &middot; ' + esc(shortName) + '</div>' +
+        '<div class="detail-header">' +
+        '<span style="color:var(--orange)">Rank #' + d.rank + '</span>' +
+        '<span>' + d.peak_avg_pcu.toFixed(1) + ' PCU</span>' +
+        '<span>' + (d.lanes != null ? d.lanes : '-') + ' lanes</span>' +
+        (d.lane_confidence ? confBadge(d.lane_confidence) : '') +
+        '</div>' +
+        '<div style="font-size:12px;color:var(--paper-dim)">' +
+        'Hourly breakdown available in the live deployment (full FastAPI backend). ' +
+        'This static build shows peak-hour ranking only.</div>';
+    }
+
+    init();
+  </script>
+</body>
+</html>

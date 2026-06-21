@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TrafficOS · Validation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar" id="topbar"></header>
+    <nav class="nav" id="nav"></nav>
+    <main class="main" id="main">
+      <div class="eyebrow">Model validation</div>
+      <h1 class="page-title">Three checks &mdash; internal &amp; external</h1>
+      <div id="checks-slot"></div>
+    </main>
+  </div>
+
+  <script src="js/shared.js"></script>
+  <script>
+    renderShell('validation');
+
+    async function init() {
+      try {
+        const xval = await loadJSON('cross_validation');
+        render(xval);
+      } catch (e) {
+        showError(document.getElementById('main'), e.message, init);
+      }
+    }
+
+    function render(xval) {
+      const c1 = xval.check1_obstruction_overlap;
+      const c2 = xval.check2_heavy_vehicle_baseline;
+      const c3 = xval.check3_tomtom_sanity_check;
+
+      document.getElementById('checks-slot').innerHTML = `
+        ${checkCard('01', 'Carriageway-obstruction overlap', 'Internal',
+          c1.overlap_count === 5 ? 'pass' : 'partial', `
+          <div class="big-result">${c1.overlap_count}<span class="big-result-dim">/${c1.total}</span></div>
+          <p style="font-size:13px;color:var(--paper-dim);line-height:1.6;margin:0">
+            Top-5 hotspots ranked independently by PCU weight, then cross-checked
+            against junctions with the most raw parking/obstruction violations.
+            Matched: ${c1.matched_junctions.join(', ') || 'none'}.
+          </p>
+        `)}
+
+        ${checkCard('02', 'Heavy-vehicle baseline', 'Internal', 'info', `
+          <p style="font-size:13px;color:var(--paper-dim);line-height:1.6;margin:0 0 12px">
+            City-wide heavy-vehicle violation rate: <b class="mono">${c2.city_baseline_pct}%</b>.
+            Top hotspots compared against this baseline:
+          </p>
+          <table class="data-table">
+            <thead><tr><th>Junction</th><th>Heavy %</th><th>Reading</th></tr></thead>
+            <tbody>
+              ${c2.junctions.map(j => `
+                <tr>
+                  <td>${esc(j.junction.split(' - ').pop())}</td>
+                  <td class="mono">${j.heavy_pct}%</td>
+                  <td>${j.above_baseline
+                    ? '<span style="color:var(--amber)">industrial corridor</span>'
+                    : '<span style="color:var(--green-bright)">typical urban core &check;</span>'}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        `)}
+
+        ${checkCard('03', 'TomTom Traffic Index sanity check', 'External', 'info', `
+          <div class="compare-row">
+            <div class="compare-card">
+              <div class="eyebrow">TomTom published (city avg)</div>
+              <div class="compare-val">${c3.tomtom_published_speed_kmph} km/h</div>
+            </div>
+            <div class="compare-card">
+              <div class="eyebrow">Model implied (top hotspots)</div>
+              <div class="compare-val" style="color:var(--orange)">${c3.model_implied_speed_kmph} km/h</div>
+            </div>
+            <div class="compare-card">
+              <div class="eyebrow">Deviation</div>
+              <div class="compare-val">${c3.deviation_pct}%</div>
+            </div>
+          </div>
+          <p class="note-p">${esc(c3.note)}</p>
+        `)}
+      `;
+    }
+
+    function checkCard(number, title, kind, status, bodyHtml) {
+      const statusColor = { pass: 'var(--green-bright)', partial: 'var(--amber)', info: 'var(--paper-dim)' }[status];
+      const statusLabel = status === 'pass' ? '&#9679; VERIFIED' : status === 'partial' ? '&#9680; PARTIAL' : '';
+      return `
+        <div class="check-card">
+          <div class="check-header">
+            <span class="mono check-num">${number}</span>
+            <div style="flex:1">
+              <div class="check-title">${esc(title)}</div>
+              <div class="check-kind">${kind}</div>
+            </div>
+            ${status !== 'info' ? `<span class="mono" style="color:${statusColor};font-size:11px">${statusLabel}</span>` : ''}
+          </div>
+          <div class="check-body">${bodyHtml}</div>
+        </div>`;
+    }
+
+    init();
+  </script>
+</body>
+</html>

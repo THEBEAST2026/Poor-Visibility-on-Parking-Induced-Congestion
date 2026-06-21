@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TrafficOS · Parking Heatmap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .leaflet-popup-content-wrapper { background: #fff; border-radius: 3px; }
+    .leaflet-popup-content { font-family: var(--font-mono); margin: 12px 14px; }
+    .popup-title { font-weight: 600; font-size: 13px; margin-bottom: 8px; color: #111; }
+    .popup-row { display: flex; justify-content: space-between; gap: 12px; font-size: 11.5px; padding: 2px 0; color: #333; }
+
+    .layer-toggle { display: flex; gap: 8px; margin-bottom: 14px; }
+    .layer-btn {
+      background: var(--ink-raised); border: 1px solid var(--steel-line); color: var(--paper-dim);
+      padding: 8px 14px; font-size: 12px; border-radius: var(--radius); cursor: pointer;
+      font-family: var(--font-mono); display: flex; align-items: center; gap: 8px;
+    }
+    .layer-btn.active { color: var(--paper); background: var(--ink-raised-2); border-color: var(--orange); }
+    .layer-swatch { width: 10px; height: 10px; border-radius: 2px; }
+
+    .ranking-table-wrap { max-height: 480px; overflow-y: auto; }
+    .rank-row { display: grid; grid-template-columns: 28px 1fr 70px 70px 70px 90px; gap: 10px; align-items: center; padding: 8px 4px; border-bottom: 1px solid var(--steel-line); font-size: 12px; cursor: pointer; }
+    .rank-row:hover { background: var(--ink-raised-2); }
+    .rank-row-header { font-size: 10px; color: var(--paper-dim); text-transform: uppercase; letter-spacing: 0.06em; padding-bottom: 8px; border-bottom: 1px solid var(--steel-line); }
+    .rank-num { color: var(--orange); font-family: var(--font-mono); }
+    .rank-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .rank-val { font-family: var(--font-mono); text-align: right; color: var(--paper-dim); }
+    .rank-score { font-family: var(--font-mono); text-align: right; color: var(--orange); font-weight: 600; }
+    .divergence-note { font-size: 11.5px; color: var(--steel); margin-top: 10px; line-height: 1.6; font-style: italic; }
+
+    .ps-banner {
+      background: linear-gradient(135deg, rgba(255,107,53,0.08), transparent);
+      border: 1px solid var(--orange-dim); border-radius: var(--radius);
+      padding: 14px 18px; margin-bottom: 20px; font-size: 12.5px; color: var(--paper-dim); line-height: 1.6;
+    }
+    .ps-banner b { color: var(--paper); }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar" id="topbar"></header>
+    <nav class="nav" id="nav"></nav>
+    <main class="main" id="main">
+      <div class="eyebrow">Parking intelligence</div>
+      <h1 class="page-title">Violation density vs. congestion impact</h1>
+
+      <div class="ps-banner">
+        Direct response to: <b>"How can AI-driven parking intelligence detect illegal
+        parking hotspots and quantify their impact on traffic flow to enable
+        targeted enforcement?"</b> &mdash; two independent signals plotted at the same
+        point: raw violation volume (enforcement workload) and PCU-weighted flow
+        impact (actual congestion cost). They diverge meaningfully &mdash; that
+        divergence is the targeting signal.
+      </div>
+
+      <div class="stat-row" id="stat-row"></div>
+
+      <div class="layer-toggle" id="layer-toggle"></div>
+      <div class="map-wrap"><div id="map" style="height:100%;width:100%"></div></div>
+      <div class="legend" id="legend"></div>
+
+      <div class="panel" style="margin-top:20px">
+        <div class="eyebrow panel-title">Enforcement targeting ranking &middot; violations &times; severity &times; PCU impact</div>
+        <div class="ranking-table-wrap">
+          <div class="rank-row rank-row-header">
+            <span>#</span><span>Junction</span><span style="text-align:right">Violations</span>
+            <span style="text-align:right">Severity</span><span style="text-align:right">PCU</span>
+            <span style="text-align:right">Score</span>
+          </div>
+          <div id="ranking-list"></div>
+        </div>
+        <div class="divergence-note">
+          Severity weights violation subtype (PARKING IN A MAIN ROAD / DOUBLE PARKING
+          score higher than WRONG PARKING / PARKING ON FOOTPATH) &mdash; a junction with
+          fewer total violations but more flow-blocking subtypes can outrank a
+          higher-volume junction with mostly footpath parking.
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="vendor/leaflet/leaflet.js"></script>
+  <script src="js/shared.js"></script>
+  <script>
+    renderShell('heatmap');
+
+    let heatmapData = [];
+    let currentLayer = 'targeting'; // 'violations' | 'pcu' | 'targeting'
+    let map, layerGroup;
+
+    const LAYERS = {
+      violations: { label: 'Violation density', field: 'violation_count', color: '#C9A86C', unit: '' },
+      pcu: { label: 'PCU impact', field: 'peak_avg_pcu', color: '#FF6B35', unit: '' },
+      targeting: { label: 'Targeting score', field: 'targeting_score', color: '#E84545', unit: '' },
+    };
+
+    async function init() {
+      try {
+        const res = await loadJSON('heatmap');
+        heatmapData = res.data;
+        render();
+      } catch (e) {
+        showError(document.getElementById('main'), e.message, init);
+      }
+    }
+
+    function render() {
+      const totalViolations = heatmapData.reduce((s, d) => s + d.violation_count, 0);
+      const top = heatmapData[0];
+
+      document.getElementById('stat-row').innerHTML = [
+        statCard('Total parking violations', totalViolations.toLocaleString('en-IN'), 'across 168 junctions', 'amber'),
+        statCard('Top target', top.junction_name.split(' - ').pop(), `score ${Math.round(top.targeting_score).toLocaleString('en-IN')}`, 'red'),
+        statCard('Avg severity (city)', (heatmapData.reduce((s, d) => s + d.avg_severity, 0) / heatmapData.length).toFixed(2), 'subtype-weighted, 1.0\u20133.0 scale'),
+      ].join('');
+
+      document.getElementById('layer-toggle').innerHTML = Object.entries(LAYERS).map(([key, cfg]) => `
+        <button class="layer-btn ${currentLayer === key ? 'active' : ''}" data-layer="${key}">
+          <span class="layer-swatch" style="background:${cfg.color}"></span>${cfg.label}
+        </button>
+      `).join('');
+      document.querySelectorAll('.layer-btn').forEach(btn => {
+        btn.addEventListener('click', () => { currentLayer = btn.dataset.layer; render(); });
+      });
+
+      document.getElementById('legend').innerHTML = `
+        <span class="eyebrow">Reading the map</span>
+        <span class="legend-item">Circle size &amp; color intensity = ${LAYERS[currentLayer].label.toLowerCase()}</span>
+        <span class="legend-note">Click rows below to locate on map</span>
+      `;
+
+      renderMap();
+      renderRanking();
+    }
+
+    function renderMap() {
+      if (!map) {
+        map = L.map('map').setView([12.97, 77.59], 12);
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+          attribution: '&copy; OpenStreetMap &copy; CARTO',
+        }).addTo(map);
+        layerGroup = L.layerGroup().addTo(map);
+      }
+      layerGroup.clearLayers();
+
+      const cfg = LAYERS[currentLayer];
+      const values = heatmapData.map(d => d[cfg.field]);
+      const maxVal = Math.max(...values);
+      const minVal = Math.min(...values);
+
+      heatmapData.forEach(d => {
+        const norm = maxVal > minVal ? (d[cfg.field] - minVal) / (maxVal - minVal) : 0.5;
+        const radius = 4 + norm * 18;
+        const opacity = 0.35 + norm * 0.55;
+        const marker = L.circleMarker([d.latitude, d.longitude], {
+          radius, color: cfg.color, fillColor: cfg.color, fillOpacity: opacity, weight: 1,
+        });
+        const shortName = d.junction_name.split(' - ').pop();
+        marker.bindPopup(`
+          <div class="popup-title">${esc(shortName)}</div>
+          <div class="popup-row"><span>Violations</span><span>${d.violation_count.toLocaleString('en-IN')}</span></div>
+          <div class="popup-row"><span>Avg severity</span><span>${d.avg_severity.toFixed(2)}</span></div>
+          <div class="popup-row"><span>Peak PCU</span><span>${d.peak_avg_pcu.toFixed(1)}</span></div>
+          <div class="popup-row"><span>Targeting score</span><span>${Math.round(d.targeting_score).toLocaleString('en-IN')}</span></div>
+        `);
+        marker.junctionName = d.junction_name;
+        layerGroup.addLayer(marker);
+      });
+    }
+
+    function renderRanking() {
+      document.getElementById('ranking-list').innerHTML = heatmapData.slice(0, 30).map(d => `
+        <div class="rank-row" data-lat="${d.latitude}" data-lon="${d.longitude}" data-name="${esc(d.junction_name)}">
+          <span class="rank-num">${d.rank}</span>
+          <span class="rank-name" title="${esc(d.junction_name)}">${esc(d.junction_name.split(' - ').pop())}</span>
+          <span class="rank-val">${d.violation_count.toLocaleString('en-IN')}</span>
+          <span class="rank-val">${d.avg_severity.toFixed(2)}</span>
+          <span class="rank-val">${d.peak_avg_pcu.toFixed(1)}</span>
+          <span class="rank-score">${Math.round(d.targeting_score).toLocaleString('en-IN')}</span>
+        </div>
+      `).join('');
+
+      document.querySelectorAll('.rank-row[data-lat]').forEach(row => {
+        row.addEventListener('click', () => {
+          const lat = parseFloat(row.dataset.lat);
+          const lon = parseFloat(row.dataset.lon);
+          map.setView([lat, lon], 16);
+          layerGroup.eachLayer(m => {
+            if (m.junctionName === row.dataset.name) m.openPopup();
+          });
+        });
+      });
+    }
+
+    init();
+  </script>
+</body>
+</html>

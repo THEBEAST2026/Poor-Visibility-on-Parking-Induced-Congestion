@@ -1,0 +1,49 @@
+{
+  "data": [
+    {
+      "vot": "low",
+      "demand": "low",
+      "total_6mo_rs": 185192141.76089332
+    },
+    {
+      "vot": "low",
+      "demand": "mid",
+      "total_6mo_rs": 346266809.97425073
+    },
+    {
+      "vot": "low",
+      "demand": "high",
+      "total_6mo_rs": 603857220.76972
+    },
+    {
+      "vot": "mid",
+      "demand": "low",
+      "total_6mo_rs": 228766763.3516917
+    },
+    {
+      "vot": "mid",
+      "demand": "mid",
+      "total_6mo_rs": 427741353.4976038
+    },
+    {
+      "vot": "mid",
+      "demand": "high",
+      "total_6mo_rs": 745941272.7155366
+    },
+    {
+      "vot": "high",
+      "demand": "low",
+      "total_6mo_rs": 272341384.9424901
+    },
+    {
+      "vot": "high",
+      "demand": "mid",
+      "total_6mo_rs": 509215897.02095693
+    },
+    {
+      "vot": "high",
+      "demand": "high",
+      "total_6mo_rs": 888025324.661353
+    }
+  ]
+}

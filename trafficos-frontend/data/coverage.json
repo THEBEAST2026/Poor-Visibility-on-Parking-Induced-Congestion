@@ -1,0 +1,851 @@
+{
+  "total_junctions": 168,
+  "tier_counts": {
+    "INSUFFICIENT": 78,
+    "MEDIUM": 37,
+    "LOW": 37,
+    "HIGH": 16
+  },
+  "data": [
+    {
+      "junction_name": "BTP001 - 10th Cross, Dr. Rajkumar Road",
+      "max_days": 63,
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP006 - Navarang Bar Junction",
+      "max_days": 4,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP008 - Navarang Theatre",
+      "max_days": 39,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP009 - Prakash Nagar Junction",
+      "max_days": 8,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP010 - Rajajinagar Entrance",
+      "max_days": 48,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP011 - RR Kalyana Mantapa, Dr. Rajkumar Road",
+      "max_days": 44,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP015 - Suguna Hospital, Dr. Rajkumar Road",
+      "max_days": 8,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP016 - 5th Main Road, RPC Layout",
+      "max_days": 48,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP017 - Attiguppe Circle",
+      "max_days": 8,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP018 - Dhobi Ghat Junction",
+      "max_days": 24,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP020 - Hosahalli Metro Station",
+      "max_days": 42,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP022 - Marenahalli Junction, Vijayanagar",
+      "max_days": 36,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP023 - Mahalaxmi Layout Entrance",
+      "max_days": 78,
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP024 - NPS, Vijayanagar",
+      "max_days": 28,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP025 - Puttamma Choultry, Nagarbhavi",
+      "max_days": 5,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP026 - 1st Block Junction, Rajajinagar",
+      "max_days": 30,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP027 - Modi Bridge Junction",
+      "max_days": 80,
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP028 - Vijayanagar Bus Stand Junction",
+      "max_days": 35,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP030 - Mekhri Circle",
+      "max_days": 5,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP032 - Windsor Circle",
+      "max_days": 45,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP033 - Sophia High School, Sankey Road",
+      "max_days": 13,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP034 - LRDE Junction",
+      "max_days": 18,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP035 - Basaweshwara Circle (LH) Junction",
+      "max_days": 5,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP036 - Police Thimmaiah Circle (GPO)",
+      "max_days": 8,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP037 - KR Circle",
+      "max_days": 17,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP038 - Mysore Bank Junction",
+      "max_days": 65,
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP040 - Elite Junction",
+      "max_days": 117,
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP041 - Gopal Gowda Circle",
+      "max_days": 13,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP042 - Minsk Square Junction (CTO)",
+      "max_days": 37,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP043 - Upparpet Junction",
+      "max_days": 67,
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP044 - Sagar Theatre Junction",
+      "max_days": 128,
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP045 - Danvanthri Road Junction",
+      "max_days": 82,
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP047 - Vidhan Soudha Metro Station",
+      "max_days": 11,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP048 - Shanthala Junction",
+      "max_days": 36,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP051 - Safina Plaza Junction",
+      "max_days": 140,
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP052 - CID Carlton House Junction",
+      "max_days": 14,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP053 - Three Let Junction",
+      "max_days": 5,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP054 - Shivananda Circle",
+      "max_days": 49,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP057 - Anand Rao Junction",
+      "max_days": 81,
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP058 - Subbanna Junction",
+      "max_days": 95,
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP061 - Bhashyam Circle",
+      "max_days": 43,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP062 - Basava Mantapa, Dr. Rajkumar Road",
+      "max_days": 35,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP063 - Siddalingaiah Circle",
+      "max_days": 48,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP064 - Devanga Hostel Junction",
+      "max_days": 11,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP067 - Jai Muni Rao Circle",
+      "max_days": 31,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP068 - Veeresh Theatre Junction",
+      "max_days": 25,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP069 - MC Circle",
+      "max_days": 30,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP070 - Cholurpalya Junction, Magadi Road",
+      "max_days": 37,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP071 - Prasanna Junction",
+      "max_days": 36,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP074 - Leprosy Hospital Junction",
+      "max_days": 50,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP075 - Police Corner",
+      "max_days": 12,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP076 - Hudson Circle",
+      "max_days": 18,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP077 - Halasuru Gate Junction",
+      "max_days": 4,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP078 - NR Square Junction",
+      "max_days": 23,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP079 - Town Hall Junction",
+      "max_days": 19,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP080 - NR Road, SP Road Junction",
+      "max_days": 85,
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP082 - KR Market Junction",
+      "max_days": 127,
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP083 - AS Char Street, Mysore Road",
+      "max_days": 62,
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP085 - Briyand Circle",
+      "max_days": 22,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP089 - Police Quarters, Sultan Road",
+      "max_days": 7,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP091 - Sirsi Circle",
+      "max_days": 17,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP092 - Bangalore Builders Junction",
+      "max_days": 8,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP093 - Toll Gate, Mysore Road",
+      "max_days": 7,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP094 - Sri Skanda Complex, Mysore Road",
+      "max_days": 10,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP095 - Satellite Bus Stand, Mysore Road",
+      "max_days": 32,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP096 - Gali Anjaneya Temple",
+      "max_days": 34,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP098 - Nayandahalli Junction",
+      "max_days": 11,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP099 - Cash Pharmacy, Residency Road",
+      "max_days": 22,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP100 - Richmond Circle",
+      "max_days": 10,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP101 - Blood Bank Circle, KH Road",
+      "max_days": 27,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP102 - BMTC Junction, KH Road",
+      "max_days": 20,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP103 - Shanti Nagar TTMC",
+      "max_days": 17,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP104 - Medical College Circle",
+      "max_days": 53,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP105 - Shivasankara Circle",
+      "max_days": 16,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP106 - VV Puram College",
+      "max_days": 11,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP107 - National College Junction",
+      "max_days": 5,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP108 - Tagore Park Junction",
+      "max_days": 71,
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP109 - Dewan Madhava Rao Junction",
+      "max_days": 15,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP110 - Bharathi Nursing Home, Basavanagudi",
+      "max_days": 2,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP112 - 14th Cross, KR Road",
+      "max_days": 2,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP113 - 27th Cross, Pai Vista, KR Road",
+      "max_days": 12,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP114 - KR Road Junction, Near JSS",
+      "max_days": 3,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP115 - Sahasra Hospital, Jayanagar",
+      "max_days": 43,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP117 - 9th Cross, Kanakapura Road",
+      "max_days": 29,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP118 - Basappa Circle",
+      "max_days": 32,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP119 - Minerva Circle",
+      "max_days": 12,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP120 - Lalbagh Main Gate Junction",
+      "max_days": 14,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP121 - KH Circle",
+      "max_days": 12,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP122 - Siddapura Junction",
+      "max_days": 9,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP123 - 10th Cross, Wilson Garden",
+      "max_days": 35,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP126 - Dairy Circle",
+      "max_days": 36,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP127 - Sagar Hospital, Jayanagar",
+      "max_days": 5,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP128 - Gorappanapalya Junction",
+      "max_days": 6,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP130 - GD Mara Junction",
+      "max_days": 18,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP132 - Anepalya Junction",
+      "max_days": 8,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP133 - Adugodi Junction",
+      "max_days": 13,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP134 - Mico Bande",
+      "max_days": 6,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP135 - UCO Bank Junction",
+      "max_days": 34,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP136 - Hosur-Tavarkere Road Junction",
+      "max_days": 37,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP137 - Madiwala Traffic PS Junction",
+      "max_days": 20,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP138 - Sarjapur Road Check Post",
+      "max_days": 6,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP140 - Madiwala Check Post",
+      "max_days": 29,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP141 - Palmgroove Junction",
+      "max_days": 5,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP142 - Lower Agram Road Junction",
+      "max_days": 6,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP143 - ASC Junction",
+      "max_days": 3,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP144 - Commando Hospital Junction",
+      "max_days": 1,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP145 - Sri Hatti Maramma Circle, Domluru",
+      "max_days": 10,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP146 - Domlur Water Tank",
+      "max_days": 10,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP148 - 17th Main, Doopanahalli Bus Stop",
+      "max_days": 25,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP154 - Itmadu Junction",
+      "max_days": 3,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP155 - Katriguppe Junction",
+      "max_days": 13,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP156 - Kamakya Junction",
+      "max_days": 2,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP157 - Kadirenahalli Cross",
+      "max_days": 3,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP158 - Devegowda Petrol Bunk",
+      "max_days": 4,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP159 - JP Nagar Metro, ORR",
+      "max_days": 11,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP161 - 15th Cross, 35th Main, JP Nagar",
+      "max_days": 2,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP163 - 16th Main Road, BTM Layout",
+      "max_days": 22,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP164 - 29th Main Road, BTM Layout",
+      "max_days": 4,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP166 - Coffee Board Junction",
+      "max_days": 14,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP167 - JC Road Junction",
+      "max_days": 19,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP168 - MSR Building, JC Road",
+      "max_days": 6,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP170 - Dr. Bheem Rao Palace, Chord Road",
+      "max_days": 29,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP171 - Indian Express (Balekundri)",
+      "max_days": 8,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP172 - Nanjappa Circle",
+      "max_days": 21,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP173 - TMC",
+      "max_days": 14,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP176 - Rajalakshmi Kalyana Mantapa, JP Nagar",
+      "max_days": 13,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP177 - Aurobindo Circle, ORR",
+      "max_days": 17,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP178 - 18th Main, Marenahalli",
+      "max_days": 1,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP179 - 9th Block, 28th Main, Jayanagar",
+      "max_days": 7,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP180 - Swagath Poornima Theatre",
+      "max_days": 18,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP181 - Bileka Halli Junction",
+      "max_days": 3,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP182 - 19th Main Junction, Rajajinagar",
+      "max_days": 44,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP184 - Lalbagh West Gate",
+      "max_days": 13,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP185 - RV Teachers College",
+      "max_days": 4,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP186 - 9th Cross, 4th Main, Jayanagar",
+      "max_days": 14,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP187 - South End Circle",
+      "max_days": 5,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP188 - 27th Cross, 4th Main, Jayanagar",
+      "max_days": 8,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP189 - New Diagonal Road, Jayanagar",
+      "max_days": 19,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP190 - 36th Cross, 4th Main, Jayanagar",
+      "max_days": 6,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP191 - 40th Cross, 4th Main, Jayanagar",
+      "max_days": 18,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP192 - Urvashi Theater",
+      "max_days": 43,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP193 - Vasavi Circle",
+      "max_days": 7,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP196 - Sarakki Main Road",
+      "max_days": 9,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP197 - 9th Cross, 24th Main, JP Nagar",
+      "max_days": 17,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP198 - 9th Cross, 8th Main, JP Nagar",
+      "max_days": 3,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP200 - 15th Cross, 33rd Main, JP Nagar",
+      "max_days": 3,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP202 - East End Main Road, Jayanagar",
+      "max_days": 6,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP203 - RRMR Junction",
+      "max_days": 10,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP204 - ESI Hospital, Rajajinagar",
+      "max_days": 33,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP205 - Modi Hospital Junction",
+      "max_days": 41,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP206 - Shankara Mutt Circle, Vijayanagar",
+      "max_days": 26,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP207 - 8th Main Road Basaveshwara Nagar",
+      "max_days": 13,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP208 - Havanur Circle",
+      "max_days": 37,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP210 - 50th cross, 12th Main , Rajajinagar",
+      "max_days": 28,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP211 - Central Street Junction",
+      "max_days": 113,
+      "tier": "HIGH"
+    },
+    {
+      "junction_name": "BTP212 - Minto Junction",
+      "max_days": 7,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP213 - Royan Circle",
+      "max_days": 3,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP214 - 5th Main Chamrajpet  Junction",
+      "max_days": 17,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP215 - Vanivillas Junction",
+      "max_days": 25,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP216 - Yediyur Junction",
+      "max_days": 15,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP217 - Baleyele Junction",
+      "max_days": 10,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP218 - Syndicate Bank Junction",
+      "max_days": 19,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP219 - Canara Bank Junction",
+      "max_days": 34,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP220 - Puttanna Junction",
+      "max_days": 30,
+      "tier": "MEDIUM"
+    },
+    {
+      "junction_name": "BTP221 - 15th Cross, 24th Main, JP Nagar",
+      "max_days": 14,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP222 - Delmia Circle",
+      "max_days": 9,
+      "tier": "INSUFFICIENT"
+    },
+    {
+      "junction_name": "BTP225 - Geetha Junction",
+      "max_days": 21,
+      "tier": "LOW"
+    },
+    {
+      "junction_name": "BTP226 - 33rd Cross, 11th Main, Jayanagar",
+      "max_days": 34,
+      "tier": "MEDIUM"
+    }
+  ]
+}
