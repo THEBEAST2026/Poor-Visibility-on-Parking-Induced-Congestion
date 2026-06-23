@@ -1,143 +1,149 @@
 # TrafficOS
 
-**Predictive parking-pressure engine for Bengaluru Traffic Police**
-
-Built for **Flipkart Gridlock 2.0 — Round 2** · Theme 1: *Poor Visibility on Parking-Induced Congestion*
+> **Predictive parking-pressure engine for Bengaluru Traffic Police**
+> Flipkart Gridlock 2.0 · Round 2 · Theme 1: *Poor Visibility on Parking-Induced Congestion*
 
 ---
 
-## What this is
+## The Problem
 
-TrafficOS turns 2,98,450 raw BTP parking-violation records (Nov 2023–Apr 2024)
-into a ranked, cost-quantified, cross-validated enforcement plan — built to be
-honest about what the data does and doesn't support.
+Illegal on-street parking in Bengaluru chokes carriageways and intersections — but enforcement today is patrol-based and reactive. There is no system that:
 
-Only 16 of 168 scanned junctions have ≥60 days of violation data, the bar
-required for a full cost-impact claim. The rest get a lighter-weight signal
-or an explicit "insufficient data" flag instead of a number they haven't
-earned. That tiering is the core design decision behind the whole system.
+- Tells officers **which parking violations are actually causing flow degradation** (not just volume)
+- **Quantifies the economic cost** of each hotspot
+- **Predicts where new choke points are forming** before they become chronic
+- **Routes limited enforcement resources** to cover the highest-impact windows first
 
-## Pages
+TrafficOS solves all four, from 2,98,450 raw BTP e-challan records.
+
+---
+
+## Live Demo
+
+Open `trafficos-frontend/index.html` in any browser — no server, no API keys, no install.
+
+Or serve locally:
+
+```bash
+cd trafficos-frontend
+python3 -m http.server 8080
+# visit http://localhost:8080
+```
+
+---
+
+## Repository Structure
+
+```
+trafficos/
+├── trafficos-frontend/        # Static dashboard — open index.html directly
+│   ├── index.html             # City map
+│   ├── heatmap.html           # Parking heatmap
+│   ├── hotspots.html          # Top junctions + cost grid
+│   ├── deployment.html        # Truck routing simulator
+│   ├── validation.html        # Cross-validation checks
+│   ├── coverage.html          # Honesty audit
+│   ├── css/style.css
+│   ├── js/shared.js
+│   ├── data/                  # Pre-computed JSON (no backend needed at runtime)
+│   └── vendor/leaflet/        # Leaflet vendored locally — no CDN, no API key
+│
+└── trafficos-backend/
+    ├── engine.py              # Full pipeline: Module 1 → 2 → 3 → 4
+    └── main.py                # Entry point — generates all data/ JSON files
+```
+
+---
+
+## Dashboard Pages
 
 | Page | What it shows |
 |---|---|
-| `index.html` | City map — 168 junctions plotted by confidence tier, with the Friday truck-routing overlay |
-| `heatmap.html` | Parking violation density vs. PCU-weighted congestion impact, with a targeting score that combines both |
-| `hotspots.html` | Top 16 high-confidence junctions ranked by density, with a 3×3 cost sensitivity grid (Value-of-Time × demand) |
-| `deployment.html` | Resource-aware, travel-time-feasible truck routing across 4 pre-computed day/fleet-size scenarios |
-| `validation.html` | Three cross-validation checks — obstruction-violation overlap, heavy-vehicle baseline, TomTom sanity check |
-| `coverage.html` | A system-wide honesty audit — exactly which junctions earn a cost claim, and which don't yet |
+| **Map** | 168 junctions city-wide, coloured by confidence tier, with Friday truck-routing overlay |
+| **Parking Heatmap** | Violation density vs. PCU congestion impact — the targeting signal |
+| **Hotspots** | Top 16 high-confidence junctions, peak PCU bar chart, 3×3 cost sensitivity grid |
+| **Deployment** | 4 pre-computed day/fleet scenarios, travel-time-feasible routing, explicit resource gaps |
+| **Validation** | Three independent cross-checks (see below) |
+| **Coverage** | Which junctions earn a cost claim — and which ones don't yet |
 
-## Run it
+---
 
-No build step, no server-side code, no API keys. Just open `index.html`
-in a browser, or serve it locally:
+## Engine Modules
+
+| Module | Purpose | Key Output |
+|---|---|---|
+| **1 — Weighted Violation Density** | PCU-weighted hotspot ranking + BPR phantom cost | Top 16 junctions, ₹18.5–88.8 Cr 6-month range |
+| **2 — Predictive Pressure Score** | Self-relative anomaly detection + trend analysis | Emerging threats (KR Market +98%, Upparpet +201%) |
+| **3 — Resource-Aware Deployment** | Travel-time-feasible truck routing, severity-proportional service time | Optimal stop sequence per scenario |
+| **4 — Parking Severity Heatmap** | Targeting score = violation count × subtype severity × PCU impact | Ranked heatmap across all 168 junctions |
+
+Run the full pipeline:
 
 ```bash
-python3 -m http.server 8080
+cd trafficos-backend
+pip install pandas numpy
+python main.py
+# Generates all JSON files into ../trafficos-frontend/data/
 ```
-
-Then visit `http://localhost:8080`
-
-## Stack
-
-
-Python: pandas, numpy
-Modeling: BPR volume-delay function, PCU weighting, severity classifier
-Visualization: Leaflet.js + custom dark UI (single HTML)
-Data: Anonymized BTP e-challan records
-
-- Vanilla HTML/CSS/JS — no framework, no build tooling
-- [Leaflet.js](https://leafletjs.com/) (vendored locally in `vendor/leaflet/`, no CDN dependency, no API key)
-- CARTO dark basemap tiles (free tier, no API key)
-- All analytics pre-computed and shipped as static JSON in `data/`
-
-## Data & methodology highlights
-
-- **PCU-weighted density**, not raw violation count — a bus blocks more
-  lane than a scooter
-- **Confidence-tiered claims** — junctions are only given a cost estimate
-  if they clear a 60-day evidence threshold; everything else is flagged,
-  not hidden
-- **Cross-validated**, not just self-reported — top hotspots independently
-  match raw obstruction-violation rankings (5/5) and were sanity-checked
-  against TomTom's published traffic index
-- **Resource-aware deployment** — truck routing respects real travel time
-  and reports uncovered windows explicitly instead of silently failing
-
-## Folder structure
-
-```
-trafficos-frontend/
-├── index.html
-├── heatmap.html
-├── hotspots.html
-├── deployment.html
-├── validation.html
-├── coverage.html
-├── css/style.css
-├── js/shared.js
-├── data/               ← pre-computed JSON, no backend needed
-└── vendor/leaflet/     ← vendored locally, no CDN dependency
-```
-trafficos-backend/
-|--engine.py
-|--main.py
-
-##BACKEND
-**"Poor Visibility on Parking-Induced Congestion"**
-
-TrafficOS solves the core challenge by:
-- Detecting **which** illegal parking violations actually create choke points (not just volume).
-- Quantifying their **economic impact** using PCU-weighted BPR congestion modeling.
-- Predicting **emerging** choke points using self-relative trends.
-- Recommending **actionable** deployment plans for limited enforcement resources.
 
 ---
 
-## Key Innovations (v7)
+## Key Design Decisions
 
-- **Module 4 — Parking Severity Classifier**: Replaced the structurally dead `FLOW/STATIONARY` split (always >80% parking) with subtype-weighted severity (`PARKING IN A MAIN ROAD` = 3.0, `DOUBLE PARKING` = 2.8, etc.).
-- **Tiered Confidence System**: Honest reporting across all **168 junctions** (HIGH/MEDIUM/LOW/INSUFFICIENT) based on data sufficiency.
-- **Lane-Aware Modeling**: Sourced / Visually Verified / Estimated lane counts with citations.
-- **Full Interactive Dashboard**: Single-file HTML with Leaflet map, hotspots, deployment simulator, validation, and coverage views.
-- **Strong Validation**: 5/5 obstruction overlap, heavy-vehicle baseline check, TomTom city-level sanity.
+**PCU-weighted density, not raw violation count**
+A bus blocking a lane causes 3× more flow disruption than a scooter. Raw counts treat them equally. PCU weights don't.
 
----
+**Confidence-tiered claims**
+168 junctions scanned. Only 16 clear the 60-day evidence threshold required for a full BPR cost claim. The other 152 get a lighter signal or an explicit `INSUFFICIENT` flag — they are never given a number they haven't earned.
 
-## Architecture
+**Self-relative anomaly detection (Module 2)**
+Global percentile tiers would always flag the same 10 chronic junctions as `CRITICAL`. Self-relative anomaly compares each junction to its own historical baseline — catching real spikes anywhere in the network.
 
-| Module | Purpose | Output |
-|--------|--------|--------|
-| **1** | Weighted Violation Density + Phantom Cost | Top hotspots by PCU, 6-month cost sensitivity grid (₹18.5–88.8 Cr) |
-| **2** | Predictive Pressure Score | Anomaly detection + trends (e.g. KR Market +98%) |
-| **3** | Resource-Aware Enforcement | Severity-ranked truck routing with travel time feasibility |
-| **4** | Parking Severity Heatmap | Targeting score = violations × severity × PCU impact |
+**Parking severity subtype weighting (Module 4)**
+`PARKING IN A MAIN ROAD` (weight 3.0) is not the same enforcement priority as `PARKING NEAR BUS STOP` (weight 1.5). Module 4 replaced a structurally broken FLOW/STATIONARY split with subtype-level severity scores.
+
+**Resource-aware routing (Module 3)**
+Trucks cannot teleport. Every stop checks real travel time at 20 km/h before assignment. Service time scales with PCU load. Uncovered windows are reported explicitly, not silently dropped.
 
 ---
-Main script (trafficos_v7.py) automatically runs all modules and prints:
 
-Coverage report
-Top hotspots
-Phantom cost range
-Emerging threats
-Deployment plan (Friday, 3 trucks)
-Validation checks
-Business impact summary
+## Validation
+
+| Check | Method | Result |
+|---|---|---|
+| **Obstruction overlap** | Top-5 PCU hotspots vs. top-10 by raw wrong/no-parking violation count | **5 / 5 match** |
+| **Heavy-vehicle baseline** | Top hotspots vs. city-wide heavy-vehicle violation rate (1.36%) | Top junctions are light-vehicle dominated — confirms urban core, not industrial corridor |
+| **TomTom sanity check** | Model-implied average speed at hotspots vs. TomTom Bengaluru index | **3.8% deviation** — within acceptable range for a historical-data model |
+
+---
 
 ## Business Impact (Mid Scenario)
 
-₹42.8 Cr estimated phantom congestion cost over 6 months (range ₹18.5–88.8 Cr)
-Top junctions cause up to +15 min extra delay per crossing
-With 3 trucks on Friday: 77%+ critical windows covered
-KR Market flagged as emerging threat (+98% trend)
+| Metric | Value |
+|---|---|
+| Phantom congestion cost (6 months) | **₹42.8 Cr** (range ₹18.5–88.8 Cr) |
+| Worst junction delay | **+15 min** per crossing (Subbanna Junction) |
+| Friday coverage with 3 trucks | **77%+ critical windows covered** |
+| Emerging threat flagged | **KR Market Junction +98% trend** |
 
-
-## Validation Highlights
-
-Check 1: 5/5 top PCU hotspots overlap with raw obstruction violations
-Check 2: Top hotspots are light-vehicle dominated (matches urban core reality)
-Check 3: Model implied speed aligns closely with TomTom Bengaluru data (deviation ~3.8%)
 ---
 
-Flipkart Gridlock 2.0 · Round 2 Prototype
+## Stack
+
+**Backend**
+- Python · pandas · numpy
+- BPR volume-delay function for congestion cost
+- PCU weighting (IRC standards)
+- Haversine travel-time routing
+- All pre-computed — zero runtime dependency for the frontend
+
+**Frontend**
+- Vanilla HTML / CSS / JavaScript — no framework, no build step
+- [Leaflet.js](https://leafletjs.com/) · vendored locally, no API key
+- CARTO dark basemap tiles · free tier, no API key
+- All data shipped as static JSON
+
+---
+---
+
+*Flipkart Gridlock 2.0 · Round 2 Prototype*
